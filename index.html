@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+        <script src="app.js" defer></script>
+        <link rel="stylesheet" href="main.css" />
+        <title>Perspective Playground</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>CSS Perspective Playground!</h1>
+            <main>
+                <section class="settings">
+                    <div class="settings-container">
+                        <label>perspective: {{ perspective }}px;</label>
+                        <input type="range" min="0" max="999" v-model="perspective" />
+
+                        <label>rotateX: {{ rotateX }}deg; </label>
+                        <input type="range" min="-180" max="180" v-model="rotateX" />
+
+                        <label>rotateY: {{ rotateY }}deg; </label>
+                        <input type="range" min="-180" max="180" v-model="rotateY" />
+
+                        <label>rotateZ: {{ rotateZ }}deg; </label>
+                        <input type="range" min="-180" max="180" v-model="rotateZ" />
+
+                        <button type="button" @click.prevent="reset">Reset</button>
+                        <button type="button" @click.prevent="copy">Copy</button>
+                        <p v-if="isClicked">Copied to clipboard!</p>
+                    </div>
+                </section>
+                <section class="output">
+                    <div class="box-container">
+                        <div class="box" :style="changeBox"></div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
