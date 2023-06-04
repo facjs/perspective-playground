@@ -5,4 +5,4 @@
 
 ![Preview](https://i.imgur.com/JTNFqpa.png)
 
-Check it out [live](https://eclectic-pasca-713136.netlify.app/)
+-   Check it out [live](https://eclectic-pasca-713136.netlify.app/)
